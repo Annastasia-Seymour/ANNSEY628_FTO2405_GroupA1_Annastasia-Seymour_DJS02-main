@@ -1,17 +1,19 @@
 const form = document.querySelector("[data-form]");
 const result = document.querySelector("[data-result]");
 
-const inputDivider = document.getElementById("divider").value;
-const inputDividend = document.getElementById("dividend").value;
+const inputDivider = document.getElementById("divider");
+const inputDividend = document.getElementById("dividend");
 
-
-if ((inputDividend.innerText = 'null') && (inputDivider.innerText ="null")){
-  alert("Fields cannot be empty");
-console.warn("Fields cannot be empty");
-
-} else {
-  submitButton();
+function validationInput(){
+  if ((inputDividend.innerHTML = 'null') && (inputDivider.innerHTML ="null")){
+    alert("Fields cannot be empty");
+  console.warn("Fields cannot be empty");
+  
+  } else {
+    submitButton();
+  }
 }
+
 
 function submitButton (){
   form.addEventListener("submit", (event) => {
