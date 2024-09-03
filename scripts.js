@@ -1,20 +1,6 @@
 const form = document.querySelector("[data-form]");
 const result = document.querySelector("[data-result]");
 
-/*const inputDivider = document.getElementById("divider");
-const inputDividend = document.getElementById("dividend");
-
-function validationInput(){
-  if ((inputDividend.innerHTML = 'null') && (inputDivider.innerHTML ="null")){
-    alert("Fields cannot be empty");
-  console.warn("Fields cannot be empty");
-  
-  } else {
-    submitButton();
-  }
-}*/
-
-
 function submitButton (){
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -22,11 +8,16 @@ function submitButton (){
     const { dividend, divider } = Object.fromEntries(entries);
 
 if ((dividend === '') || (divider ==='')) {
-  alert("Fields cannot be empty");
+  //alert("Fields cannot be empty");
+  result.innerText ="Division not performed. Both values are required in inputs. Try again";
   console.warn("Fields cannot be empty");
   
-} else {
-  
+} else if ((divider > dividend) || (divider === "0")) {
+  result.innerText ="Division not performed. Invalid number provided. Try again";
+  console.error(`${dividend} cannot be divided by ${divider}, results in undefined`);
+
+}
+else {
   result.innerText = Math.floor(dividend / divider);
 }
 });
@@ -35,6 +26,5 @@ if ((dividend === '') || (divider ==='')) {
 
 
 submitButton();
+//remember to remove function? 
 
-
-//let calculationResult = document.getElementById("calculationResult");
