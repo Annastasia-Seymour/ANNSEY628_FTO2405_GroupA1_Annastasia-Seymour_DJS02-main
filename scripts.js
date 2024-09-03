@@ -1,7 +1,7 @@
 const form = document.querySelector("[data-form]");
 const result = document.querySelector("[data-result]");
 
-const inputDivider = document.getElementById("divider");
+/*const inputDivider = document.getElementById("divider");
 const inputDividend = document.getElementById("dividend");
 
 function validationInput(){
@@ -12,7 +12,7 @@ function validationInput(){
   } else {
     submitButton();
   }
-}
+}*/
 
 
 function submitButton (){
@@ -20,11 +20,11 @@ function submitButton (){
     event.preventDefault();
     const entries = new FormData(event.target);
     const { dividend, divider } = Object.fromEntries(entries);
-    result.innerText = dividend / divider;
+    result.innerText = Math.floor(dividend / divider);
   });
   
 }
-
+submitButton();
 
 
 //let calculationResult = document.getElementById("calculationResult");
