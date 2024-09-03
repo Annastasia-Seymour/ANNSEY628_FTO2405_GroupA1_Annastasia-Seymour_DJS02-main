@@ -20,10 +20,20 @@ function submitButton (){
     event.preventDefault();
     const entries = new FormData(event.target);
     const { dividend, divider } = Object.fromEntries(entries);
-    result.innerText = Math.floor(dividend / divider);
-  });
+
+if ((dividend === '') || (divider ==='')) {
+  alert("Fields cannot be empty");
+  console.warn("Fields cannot be empty");
+  
+} else {
+  
+  result.innerText = Math.floor(dividend / divider);
+}
+});
   
 }
+
+
 submitButton();
 
 
